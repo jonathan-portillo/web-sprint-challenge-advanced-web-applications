@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Login = (props) => {
@@ -14,7 +14,7 @@ const Login = (props) => {
   const login = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/login", state)
+      .post("/api/login", state)
       .then((res) => {
         console.log("login res", res);
         localStorage.setItem("token", res.data.payload);
